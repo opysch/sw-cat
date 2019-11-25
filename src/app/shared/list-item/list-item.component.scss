@@ -1,0 +1,15 @@
+@import '../../../assets/css/variables.scss';
+
+.card {
+  margin: 1rem;
+  cursor: pointer;
+  @include transitionStyle;
+
+  &:hover {
+    background-color: $greyLevel0;
+  }
+
+  &:active {
+    background-color: $greyLevel1;
+  }
+}

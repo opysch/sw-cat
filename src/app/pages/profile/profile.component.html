@@ -1,0 +1,36 @@
+<div class="container" *ngIf="!isLoading">
+
+  <div class="row">
+    <div class="col-sm">
+      <img class="card-img-top" [src]="sharedService.profilePhoto" [alt]="hero.name + ' photo'" />
+    </div>
+    <div class="col-sm">
+      <h2>{{hero.name}}</h2>
+      <p><strong>Height</strong>: {{hero.height}}</p>
+      <p><strong>Mass</strong>: {{hero.mass}}</p>
+      <p><strong>Hair Color</strong>: {{hero.hair_color}}</p>
+      <p><strong>Skin Color</strong>: {{hero.skin_color}}</p>
+      <p><strong>Eye Color</strong>: {{hero.eye_color}}</p>
+      <p><strong>Birth Year</strong>: {{hero.birth_year}}</p>
+      <p><strong>Gender</strong>: {{hero.gender}}</p>
+      <p><strong>Home World</strong>: {{planetName}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <h3>Characters from same planet</h3>
+      <div class="characters-wrapper">
+        <ng-container *ngFor="let resident of planetResidents; let i = index">
+          <app-linked-character [data]="resident"></app-linked-character>
+        </ng-container>
+        <span *ngIf="!planetResidents.length">
+          {{"NO_MORE_RESIDENTS" | dictionary}}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<app-spinner *ngIf="isLoading"></app-spinner>
+<app-error *ngIf="isError"></app-error>
+

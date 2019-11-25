@@ -1,0 +1,19 @@
+// Greys
+$greyLevel0: #F3F3F3;
+$greyLevel1: #E6E6E6;
+$greyLevel2: #CDCDCD;
+$greyLevel3: #999999;
+$greyLevel4: #808080;
+$greyLevel5: #4D4D4D;
+$greyLevel6: #333333;
+$blocksBgColor: white;
+
+$animationDuration: 0.5s;
+$animationEasing: ease-in-out;
+
+@mixin transitionStyle() {
+  -moz-transition: all $animationDuration $animationEasing;
+  -o-transition: all $animationDuration $animationEasing;
+  -webkit-transition: all $animationDuration $animationEasing;
+  transition: all $animationDuration $animationEasing;
+}

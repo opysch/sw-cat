@@ -1,0 +1,15 @@
+<div class="card" (click)="gotoProfile(data.url)">
+  <img class="card-img-top" [src]="sharedService.photoImg" [alt]="data.name + ' photo'" />
+  <div class="card-body">
+    <h5 class="card-title">{{data.name}}</h5>
+    <p class="card-text">
+      <strong>Height</strong>: {{data.height}}, <br />
+      <strong>Mass</strong>: {{data.mass}}, <br />
+      <strong>Hair Color</strong>: {{data.hair_color}}, <br />
+      <strong>Skin Color</strong>: {{data.skin_color}}, <br />
+      <strong>Eye Color</strong>: {{data.eye_color}}, <br />
+      <strong>Birth Year</strong>: {{data.birth_year}}, <br />
+      <strong>Gender</strong>: {{data.gender}}
+    </p>
+  </div>
+</div>

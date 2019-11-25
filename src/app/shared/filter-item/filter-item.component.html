@@ -1,0 +1,32 @@
+<div ngbDropdown class="d-inline-block">
+  <button class="btn btn-secondary" [id]="'dropdownBasic' + id" id="dropdownBasic1" ngbDropdownToggle [disabled]="data.filterType !== 'input' && (!data.options || !data.options.length)">{{data.name}}</button>
+  <div ngbDropdownMenu [attr.aria-labelledby]="'dropdownBasic' + id">
+    <!-- Template for CHECKBOX filter type -->
+    <ng-template [ngIf]="data.filterType === 'checkbox'">
+      <ng-container *ngFor="let one of data.options; let i = index">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" [name]="one" [id]="'defaultCheck' + i" (change)="onFilterCheckboxChange()">
+          <label class="form-check-label" [attr.for]="'defaultCheck' + i">
+            {{one}}
+          </label>
+        </div>
+      </ng-container>
+    </ng-template>
+
+    <!-- Template for INPUT filter type -->
+    <ng-template [ngIf]="data.filterType === 'input'">
+      <div class="input-group">
+        <input class="form-control" type="text" value="" [name]="data.name" [id]="'defaultInput'" (keyup)="onFilterInputChange($event)" />
+      </div>
+    </ng-template>
+
+    <!-- Template for DROPDOWN filter type -->
+    <ng-template [ngIf]="data.filterType === 'dropdown'">
+      <div class="input-group">
+        <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="filterPlanet" (ngModelChange)="onFilterDropdownChange($event)" [ngbTypeahead]="search" />
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+

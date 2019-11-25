@@ -1,0 +1,13 @@
+.row {
+  justify-content: space-evenly;
+
+  .filter-wrapper {
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+strong {
+  display: inline-block;
+  width: 80px;
+}

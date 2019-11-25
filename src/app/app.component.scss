@@ -1,0 +1,16 @@
+@import '../assets/css/variables.scss';
+
+.main-head {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+
+  h1 {
+    @include transitionStyle;
+    color: $greyLevel5;
+    cursor: pointer;
+
+    &:hover {
+      color: black;
+    }
+  }
+}

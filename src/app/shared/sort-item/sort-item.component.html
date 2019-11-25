@@ -1,0 +1,5 @@
+<span class="sort-item-wrapper" *ngIf="data !== ''">
+  <span>{{data | dictionary}}</span>
+  <i class="sort-asc-item" [style]="getIconBg('asc')" (click)="sortItems(data, 'asc')"> </i>
+  <i class="sort-desc-item" [style]="getIconBg('desc')" (click)="sortItems(data, 'desc')"> </i>
+</span>
